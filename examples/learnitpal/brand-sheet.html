@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LearnitPal Mark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+:root{color-scheme:light dark;
+  --bg:#F9F5EF;--surface:#F1EBE2;--ink:#1B1712;--muted:#6E655A;--line:#E2DACE;--amber:#E0962C;--grid:#E4DCD0;--note:#9A6A22;
+  --sans:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Iowan Old Style","Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14110D;--surface:#1E1A15;--ink:#F3EEE6;--muted:#A69C8F;--line:#2E2821;--amber:#F0AE45;--grid:#2A241D;--note:#E7B35F}}
+:root[data-theme="dark"]{--bg:#14110D;--surface:#1E1A15;--ink:#F3EEE6;--muted:#A69C8F;--line:#2E2821;--amber:#F0AE45;--grid:#2A241D;--note:#E7B35F}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans)}
+img,svg{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px;padding-block:28px 96px}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px}
+header.top .lock{height:32px;width:auto}
+button.theme{font:600 13px/1 var(--sans);color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer}
+button.theme:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center;padding-block:72px 56px;border-bottom:1px solid var(--line)}
+.hero .big{width:100%;max-width:380px;height:auto;justify-self:center}
+h1{font:500 clamp(34px,5vw,54px)/1.08 var(--serif);letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
+h2{font:700 12px/1 var(--sans);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:0 0 20px}
+p{margin:0 0 14px;max-width:62ch}
+.lede{font-size:18px;color:var(--muted)}
+.lede b{color:var(--ink);font-weight:600}
+section{padding-block:56px;border-bottom:1px solid var(--line)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.construct{width:100%;height:auto}
+.construct .lbl{font:600 15px var(--mono)}
+.grounds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ground{border-radius:14px;aspect-ratio:4/3;display:grid;place-items:center;padding:24px;border:1px solid var(--line)}
+.ground svg{width:46%;height:auto}
+.ground.wide svg{width:86%}
+.cap{font-size:13px;color:var(--muted);margin-top:8px}
+.sizes{display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.sizes figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.sizes figcaption{font:13px var(--mono);color:var(--muted)}
+.phones{display:flex;gap:24px;flex-wrap:wrap}
+.phone{width:min(220px,44%);border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+.phone svg{display:block;width:100%;height:auto}
+ul.sw{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px}
+ul.sw li{display:grid;grid-template-columns:44px 1fr;column-gap:12px;align-items:center}
+.chip{grid-row:span 3;width:44px;height:44px;border-radius:50%;border:1px solid var(--line)}
+ul.sw code{font:13px var(--mono);color:var(--muted)}
+ul.sw small{font-size:13px;color:var(--muted);line-height:1.35}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 48px;padding:0;margin:0;list-style:none}
+.rules li{padding-left:22px;position:relative}
+.rules li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--amber)}
+ul.files{columns:2;column-gap:48px;padding:0;margin:0;list-style:none}
+ul.files code{font:13px/2 var(--mono);color:var(--muted)}
+@media (max-width:720px){.hero,.two{grid-template-columns:1fr}.grounds{grid-template-columns:1fr}.rules{grid-template-columns:1fr}ul.files{columns:1}.hero{padding-block:40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <svg class="lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1592 415" role="img" aria-label="LearnitPal"><path d="M60.00 60.00 L95.11 90.53 L130.21 60.00 L130.21 221.79 L267.58 221.79 L267.58 292.00 L60.00 292.00 Z" fill="var(--ink)"/><circle cx="194.32" cy="157.68" r="47.32" fill="var(--amber)"/><path transform="translate(355.34 292.00) scale(0.26420)" d="M61 0V-757H192V0Z M557 12Q473 12 410.0 -26.0Q347 -64 312.0 -129.0Q277 -194 277 -273Q277 -355 312.5 -418.5Q348 -482 409.5 -519.0Q471 -556 547 -556Q611 -556 659.5 -535.0Q708 -514 742.0 -477.0Q776 -440 794.0 -392.5Q812 -345 812 -290Q812 -276 810.5 -261.0Q809 -246 805 -235H385V-335H731L669 -288Q678 -334 664.5 -370.0Q651 -406 620.5 -427.0Q590 -448 547 -448Q506 -448 474.0 -427.5Q442 -407 425.5 -367.5Q409 -328 413 -272Q409 -222 426.5 -183.5Q444 -145 478.5 -124.0Q513 -103 558 -103Q603 -103 634.5 -122.0Q666 -141 684 -173L790 -121Q774 -82 740.0 -52.0Q706 -22 659.5 -5.0Q613 12 557 12Z M1060 12Q1003 12 961.0 -7.0Q919 -26 896.0 -61.5Q873 -97 873 -144Q873 -189 893.0 -224.5Q913 -260 955.0 -284.0Q997 -308 1061 -318L1239 -347V-247L1086 -221Q1047 -214 1028.0 -196.0Q1009 -178 1009 -149Q1009 -121 1030.5 -104.5Q1052 -88 1084 -88Q1125 -88 1156.5 -105.5Q1188 -123 1205.5 -154.0Q1223 -185 1223 -222V-362Q1223 -397 1195.5 -420.5Q1168 -444 1123 -444Q1081 -444 1048.5 -421.5Q1016 -399 1001 -362L894 -414Q910 -457 944.5 -488.5Q979 -520 1026.0 -538.0Q1073 -556 1128 -556Q1195 -556 1246.0 -531.5Q1297 -507 1325.5 -463.5Q1354 -420 1354 -362V0H1230V-93L1258 -95Q1237 -60 1208.0 -36.5Q1179 -13 1142.0 -0.5Q1105 12 1060 12Z M1461 0V-544H1584V-423L1574 -441Q1593 -502 1633.5 -526.0Q1674 -550 1731 -550H1763V-434H1716Q1660 -434 1626.0 -399.5Q1592 -365 1592 -303V0Z M1821 0V-544H1944V-437L1934 -456Q1953 -505 1996.5 -530.5Q2040 -556 2098 -556Q2158 -556 2204.5 -530.0Q2251 -504 2277.0 -457.5Q2303 -411 2303 -350V0H2172V-319Q2172 -355 2158.0 -381.0Q2144 -407 2119.5 -421.5Q2095 -436 2062 -436Q2030 -436 2005.0 -421.5Q1980 -407 1966.0 -381.0Q1952 -355 1952 -319V0Z M2400 0V-544H2531V0Z M2886 6Q2794 6 2743.5 -44.5Q2693 -95 2693 -187V-427H2599V-544H2609Q2649 -544 2671.0 -565.0Q2693 -586 2693 -626V-668H2824V-544H2949V-427H2824V-194Q2824 -167 2833.5 -148.0Q2843 -129 2863.5 -119.0Q2884 -109 2916 -109Q2923 -109 2932.5 -110.0Q2942 -111 2951 -112V0Q2937 2 2919.0 4.0Q2901 6 2886 6Z M3037 200V-544H3160V-436L3148 -463Q3176 -507 3224.0 -531.5Q3272 -556 3335 -556Q3412 -556 3474.0 -518.0Q3536 -480 3572.5 -416.0Q3609 -352 3609 -272Q3609 -193 3573.0 -128.0Q3537 -63 3475.0 -25.5Q3413 12 3334 12Q3275 12 3225.5 -11.5Q3176 -35 3147 -79L3168 -105V200ZM3319 -108Q3364 -108 3399.0 -129.0Q3434 -150 3453.5 -187.0Q3473 -224 3473 -272Q3473 -320 3453.5 -356.5Q3434 -393 3399.0 -414.5Q3364 -436 3319 -436Q3276 -436 3241.5 -415.0Q3207 -394 3187.5 -356.5Q3168 -319 3168 -272Q3168 -224 3187.5 -187.0Q3207 -150 3241.5 -129.0Q3276 -108 3319 -108Z M3860 12Q3803 12 3761.0 -7.0Q3719 -26 3696.0 -61.5Q3673 -97 3673 -144Q3673 -189 3693.0 -224.5Q3713 -260 3755.0 -284.0Q3797 -308 3861 -318L4039 -347V-247L3886 -221Q3847 -214 3828.0 -196.0Q3809 -178 3809 -149Q3809 -121 3830.5 -104.5Q3852 -88 3884 -88Q3925 -88 3956.5 -105.5Q3988 -123 4005.5 -154.0Q4023 -185 4023 -222V-362Q4023 -397 3995.5 -420.5Q3968 -444 3923 -444Q3881 -444 3848.5 -421.5Q3816 -399 3801 -362L3694 -414Q3710 -457 3744.5 -488.5Q3779 -520 3826.0 -538.0Q3873 -556 3928 -556Q3995 -556 4046.0 -531.5Q4097 -507 4125.5 -463.5Q4154 -420 4154 -362V0H4030V-93L4058 -95Q4037 -60 4008.0 -36.5Q3979 -13 3942.0 -0.5Q3905 12 3860 12Z M4261 0V-757H4392V0Z" fill="var(--ink)"/><circle cx="1006.73" cy="113.66" r="19.97" fill="var(--amber)"/></svg>
+  <button class="theme" id="theme-toggle" type="button" aria-label="Switch light or dark">Theme: system</button>
+</header>
+
+<div class="hero">
+  <svg class="big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 396" role="img" aria-label="LearnitPal"><path d="M46.00 46.00 L92.00 86.00 L138.00 46.00 L138.00 258.00 L318.00 258.00 L318.00 350.00 L46.00 350.00 Z" fill="var(--ink)"/><circle cx="222.00" cy="174.00" r="62.00" fill="var(--amber)"/></svg>
+  <div>
+    <h1>A bookmark, folded into an L, keeping your place.</h1>
+    <p class="lede">The ribbon has the <b>V-notch of a bookmark</b> and turns a corner to make the <b>L</b> of LearnitPal. Resting in that corner is the <b>amber dot</b>: the one article picked for you today. It is the whole product in three shapes.</p>
+    <p class="lede">The same dot is the tittle on the i of the wordmark, so the name and the symbol carry the same idea.</p>
+  </div>
+</div>
+
+<section class="two">
+  <div>
+    <h2>Construction</h2>
+    <p>Every measure comes from the stroke width, <b>T</b>. The notch is cut 0.43T deep at the midpoint. The dot's radius is two thirds of T, and it sits a quarter T clear of both arms, so it rests in the corner without touching either.</p>
+    <p>There are no curves in the ribbon and no gradients anywhere. It prints in one colour, engraves, embroiders and stamps.</p>
+    <p class="cap">Clear space: half a T on every side. No other element comes inside it.</p>
+  </div>
+  <svg class="construct" viewBox="-120 -60 470 430" role="img" aria-label="Construction of the mark on a grid of stroke units">
+  <defs><pattern id="g" width="23" height="23" patternUnits="userSpaceOnUse"><path d="M23 0H0V23" fill="none" stroke="var(--grid)" stroke-width="1"/></pattern></defs>
+  <rect x="0" y="0" width="272" height="304" fill="url(#g)"/>
+  <path d="M0 0 L46.0 40 L92 0 L92 212 L272 212 L272 304 L0 304 Z" fill="var(--ink)" fill-opacity=".9"/>
+  <circle cx="176" cy="128" r="62" fill="var(--amber)"/>
+  <circle cx="176" cy="128" r="3" fill="var(--ink)"/>
+  <g stroke="var(--note)" stroke-width="1.5" fill="none">
+    <path d="M0 -28 H92"/><path d="M0 -34 V-22 M92 -34 V-22"/>
+    <path d="M-28 0 V40"/><path d="M-34 0 H-22 M-34 40 H-22"/>
+    <path d="M92 128 H114"/>
+    <path d="M176 212 V190"/>
+    <path d="M176 128 L219.8 84.2"/>
+    <path d="M300 212 V304"/><path d="M294 212 H306 M294 304 H306"/>
+  </g>
+  <g class="lbl" fill="var(--note)">
+    <text x="46.0" y="-40" text-anchor="middle">T</text>
+    <text x="-40" y="25.0" text-anchor="end">0.43T</text>
+    <text x="103" y="120" text-anchor="middle">¼T</text>
+    <text x="192" y="206" text-anchor="start">¼T</text>
+    <text x="226" y="78">⅔T</text>
+    <text x="312" y="263.0">T</text>
+    <text x="136.0" y="348" text-anchor="middle">3T wide · 3.3T tall</text>
+  </g>
+</svg>
+</section>
+
+<section>
+  <h2>On every ground</h2>
+  <div class="grounds">
+    <div><div class="ground" style="background:#F9F5EF"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 396" role="img" aria-label="LearnitPal"><path d="M46.00 46.00 L92.00 86.00 L138.00 46.00 L138.00 258.00 L318.00 258.00 L318.00 350.00 L46.00 350.00 Z" fill="#1B1712"/><circle cx="222.00" cy="174.00" r="62.00" fill="#E0962C"/></svg></div><p class="cap">Primary, on Paper</p></div>
+    <div><div class="ground" style="background:#14110D"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 396" role="img" aria-label="LearnitPal"><path d="M46.00 46.00 L92.00 86.00 L138.00 46.00 L138.00 258.00 L318.00 258.00 L318.00 350.00 L46.00 350.00 Z" fill="#F3EEE6"/><circle cx="222.00" cy="174.00" r="62.00" fill="#E0962C"/></svg></div><p class="cap">Reversed, on Night</p></div>
+    <div><div class="ground" style="background:#E0962C"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 396" role="img" aria-label="LearnitPal"><path d="M46.00 46.00 L92.00 86.00 L138.00 46.00 L138.00 258.00 L318.00 258.00 L318.00 350.00 L46.00 350.00 Z" fill="#1B1712"/><circle cx="222.00" cy="174.00" r="62.00" fill="#1B1712"/></svg></div><p class="cap">One colour. On amber the dot goes Ink too.</p></div>
+    <div><div class="ground wide" style="background:#F9F5EF"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1592 415" role="img" aria-label="LearnitPal"><path d="M60.00 60.00 L95.11 90.53 L130.21 60.00 L130.21 221.79 L267.58 221.79 L267.58 292.00 L60.00 292.00 Z" fill="#1B1712"/><circle cx="194.32" cy="157.68" r="47.32" fill="#E0962C"/><path transform="translate(355.34 292.00) scale(0.26420)" d="M61 0V-757H192V0Z M557 12Q473 12 410.0 -26.0Q347 -64 312.0 -129.0Q277 -194 277 -273Q277 -355 312.5 -418.5Q348 -482 409.5 -519.0Q471 -556 547 -556Q611 -556 659.5 -535.0Q708 -514 742.0 -477.0Q776 -440 794.0 -392.5Q812 -345 812 -290Q812 -276 810.5 -261.0Q809 -246 805 -235H385V-335H731L669 -288Q678 -334 664.5 -370.0Q651 -406 620.5 -427.0Q590 -448 547 -448Q506 -448 474.0 -427.5Q442 -407 425.5 -367.5Q409 -328 413 -272Q409 -222 426.5 -183.5Q444 -145 478.5 -124.0Q513 -103 558 -103Q603 -103 634.5 -122.0Q666 -141 684 -173L790 -121Q774 -82 740.0 -52.0Q706 -22 659.5 -5.0Q613 12 557 12Z M1060 12Q1003 12 961.0 -7.0Q919 -26 896.0 -61.5Q873 -97 873 -144Q873 -189 893.0 -224.5Q913 -260 955.0 -284.0Q997 -308 1061 -318L1239 -347V-247L1086 -221Q1047 -214 1028.0 -196.0Q1009 -178 1009 -149Q1009 -121 1030.5 -104.5Q1052 -88 1084 -88Q1125 -88 1156.5 -105.5Q1188 -123 1205.5 -154.0Q1223 -185 1223 -222V-362Q1223 -397 1195.5 -420.5Q1168 -444 1123 -444Q1081 -444 1048.5 -421.5Q1016 -399 1001 -362L894 -414Q910 -457 944.5 -488.5Q979 -520 1026.0 -538.0Q1073 -556 1128 -556Q1195 -556 1246.0 -531.5Q1297 -507 1325.5 -463.5Q1354 -420 1354 -362V0H1230V-93L1258 -95Q1237 -60 1208.0 -36.5Q1179 -13 1142.0 -0.5Q1105 12 1060 12Z M1461 0V-544H1584V-423L1574 -441Q1593 -502 1633.5 -526.0Q1674 -550 1731 -550H1763V-434H1716Q1660 -434 1626.0 -399.5Q1592 -365 1592 -303V0Z M1821 0V-544H1944V-437L1934 -456Q1953 -505 1996.5 -530.5Q2040 -556 2098 -556Q2158 -556 2204.5 -530.0Q2251 -504 2277.0 -457.5Q2303 -411 2303 -350V0H2172V-319Q2172 -355 2158.0 -381.0Q2144 -407 2119.5 -421.5Q2095 -436 2062 -436Q2030 -436 2005.0 -421.5Q1980 -407 1966.0 -381.0Q1952 -355 1952 -319V0Z M2400 0V-544H2531V0Z M2886 6Q2794 6 2743.5 -44.5Q2693 -95 2693 -187V-427H2599V-544H2609Q2649 -544 2671.0 -565.0Q2693 -586 2693 -626V-668H2824V-544H2949V-427H2824V-194Q2824 -167 2833.5 -148.0Q2843 -129 2863.5 -119.0Q2884 -109 2916 -109Q2923 -109 2932.5 -110.0Q2942 -111 2951 -112V0Q2937 2 2919.0 4.0Q2901 6 2886 6Z M3037 200V-544H3160V-436L3148 -463Q3176 -507 3224.0 -531.5Q3272 -556 3335 -556Q3412 -556 3474.0 -518.0Q3536 -480 3572.5 -416.0Q3609 -352 3609 -272Q3609 -193 3573.0 -128.0Q3537 -63 3475.0 -25.5Q3413 12 3334 12Q3275 12 3225.5 -11.5Q3176 -35 3147 -79L3168 -105V200ZM3319 -108Q3364 -108 3399.0 -129.0Q3434 -150 3453.5 -187.0Q3473 -224 3473 -272Q3473 -320 3453.5 -356.5Q3434 -393 3399.0 -414.5Q3364 -436 3319 -436Q3276 -436 3241.5 -415.0Q3207 -394 3187.5 -356.5Q3168 -319 3168 -272Q3168 -224 3187.5 -187.0Q3207 -150 3241.5 -129.0Q3276 -108 3319 -108Z M3860 12Q3803 12 3761.0 -7.0Q3719 -26 3696.0 -61.5Q3673 -97 3673 -144Q3673 -189 3693.0 -224.5Q3713 -260 3755.0 -284.0Q3797 -308 3861 -318L4039 -347V-247L3886 -221Q3847 -214 3828.0 -196.0Q3809 -178 3809 -149Q3809 -121 3830.5 -104.5Q3852 -88 3884 -88Q3925 -88 3956.5 -105.5Q3988 -123 4005.5 -154.0Q4023 -185 4023 -222V-362Q4023 -397 3995.5 -420.5Q3968 -444 3923 -444Q3881 -444 3848.5 -421.5Q3816 -399 3801 -362L3694 -414Q3710 -457 3744.5 -488.5Q3779 -520 3826.0 -538.0Q3873 -556 3928 -556Q3995 -556 4046.0 -531.5Q4097 -507 4125.5 -463.5Q4154 -420 4154 -362V0H4030V-93L4058 -95Q4037 -60 4008.0 -36.5Q3979 -13 3942.0 -0.5Q3905 12 3860 12Z M4261 0V-757H4392V0Z" fill="#1B1712"/><circle cx="1006.73" cy="113.66" r="19.97" fill="#E0962C"/></svg></div><p class="cap">Horizontal lockup</p></div>
+    <div><div class="ground wide" style="background:#14110D"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1592 415" role="img" aria-label="LearnitPal"><path d="M60.00 60.00 L95.11 90.53 L130.21 60.00 L130.21 221.79 L267.58 221.79 L267.58 292.00 L60.00 292.00 Z" fill="#F3EEE6"/><circle cx="194.32" cy="157.68" r="47.32" fill="#E0962C"/><path transform="translate(355.34 292.00) scale(0.26420)" d="M61 0V-757H192V0Z M557 12Q473 12 410.0 -26.0Q347 -64 312.0 -129.0Q277 -194 277 -273Q277 -355 312.5 -418.5Q348 -482 409.5 -519.0Q471 -556 547 -556Q611 -556 659.5 -535.0Q708 -514 742.0 -477.0Q776 -440 794.0 -392.5Q812 -345 812 -290Q812 -276 810.5 -261.0Q809 -246 805 -235H385V-335H731L669 -288Q678 -334 664.5 -370.0Q651 -406 620.5 -427.0Q590 -448 547 -448Q506 -448 474.0 -427.5Q442 -407 425.5 -367.5Q409 -328 413 -272Q409 -222 426.5 -183.5Q444 -145 478.5 -124.0Q513 -103 558 -103Q603 -103 634.5 -122.0Q666 -141 684 -173L790 -121Q774 -82 740.0 -52.0Q706 -22 659.5 -5.0Q613 12 557 12Z M1060 12Q1003 12 961.0 -7.0Q919 -26 896.0 -61.5Q873 -97 873 -144Q873 -189 893.0 -224.5Q913 -260 955.0 -284.0Q997 -308 1061 -318L1239 -347V-247L1086 -221Q1047 -214 1028.0 -196.0Q1009 -178 1009 -149Q1009 -121 1030.5 -104.5Q1052 -88 1084 -88Q1125 -88 1156.5 -105.5Q1188 -123 1205.5 -154.0Q1223 -185 1223 -222V-362Q1223 -397 1195.5 -420.5Q1168 -444 1123 -444Q1081 -444 1048.5 -421.5Q1016 -399 1001 -362L894 -414Q910 -457 944.5 -488.5Q979 -520 1026.0 -538.0Q1073 -556 1128 -556Q1195 -556 1246.0 -531.5Q1297 -507 1325.5 -463.5Q1354 -420 1354 -362V0H1230V-93L1258 -95Q1237 -60 1208.0 -36.5Q1179 -13 1142.0 -0.5Q1105 12 1060 12Z M1461 0V-544H1584V-423L1574 -441Q1593 -502 1633.5 -526.0Q1674 -550 1731 -550H1763V-434H1716Q1660 -434 1626.0 -399.5Q1592 -365 1592 -303V0Z M1821 0V-544H1944V-437L1934 -456Q1953 -505 1996.5 -530.5Q2040 -556 2098 -556Q2158 -556 2204.5 -530.0Q2251 -504 2277.0 -457.5Q2303 -411 2303 -350V0H2172V-319Q2172 -355 2158.0 -381.0Q2144 -407 2119.5 -421.5Q2095 -436 2062 -436Q2030 -436 2005.0 -421.5Q1980 -407 1966.0 -381.0Q1952 -355 1952 -319V0Z M2400 0V-544H2531V0Z M2886 6Q2794 6 2743.5 -44.5Q2693 -95 2693 -187V-427H2599V-544H2609Q2649 -544 2671.0 -565.0Q2693 -586 2693 -626V-668H2824V-544H2949V-427H2824V-194Q2824 -167 2833.5 -148.0Q2843 -129 2863.5 -119.0Q2884 -109 2916 -109Q2923 -109 2932.5 -110.0Q2942 -111 2951 -112V0Q2937 2 2919.0 4.0Q2901 6 2886 6Z M3037 200V-544H3160V-436L3148 -463Q3176 -507 3224.0 -531.5Q3272 -556 3335 -556Q3412 -556 3474.0 -518.0Q3536 -480 3572.5 -416.0Q3609 -352 3609 -272Q3609 -193 3573.0 -128.0Q3537 -63 3475.0 -25.5Q3413 12 3334 12Q3275 12 3225.5 -11.5Q3176 -35 3147 -79L3168 -105V200ZM3319 -108Q3364 -108 3399.0 -129.0Q3434 -150 3453.5 -187.0Q3473 -224 3473 -272Q3473 -320 3453.5 -356.5Q3434 -393 3399.0 -414.5Q3364 -436 3319 -436Q3276 -436 3241.5 -415.0Q3207 -394 3187.5 -356.5Q3168 -319 3168 -272Q3168 -224 3187.5 -187.0Q3207 -150 3241.5 -129.0Q3276 -108 3319 -108Z M3860 12Q3803 12 3761.0 -7.0Q3719 -26 3696.0 -61.5Q3673 -97 3673 -144Q3673 -189 3693.0 -224.5Q3713 -260 3755.0 -284.0Q3797 -308 3861 -318L4039 -347V-247L3886 -221Q3847 -214 3828.0 -196.0Q3809 -178 3809 -149Q3809 -121 3830.5 -104.5Q3852 -88 3884 -88Q3925 -88 3956.5 -105.5Q3988 -123 4005.5 -154.0Q4023 -185 4023 -222V-362Q4023 -397 3995.5 -420.5Q3968 -444 3923 -444Q3881 -444 3848.5 -421.5Q3816 -399 3801 -362L3694 -414Q3710 -457 3744.5 -488.5Q3779 -520 3826.0 -538.0Q3873 -556 3928 -556Q3995 -556 4046.0 -531.5Q4097 -507 4125.5 -463.5Q4154 -420 4154 -362V0H4030V-93L4058 -95Q4037 -60 4008.0 -36.5Q3979 -13 3942.0 -0.5Q3905 12 3860 12Z M4261 0V-757H4392V0Z" fill="#F3EEE6"/><circle cx="1006.73" cy="113.66" r="19.97" fill="#E0962C"/></svg></div><p class="cap">Lockup, reversed</p></div>
+    <div><div class="ground wide" style="background:#FFFFFF"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1592 415" role="img" aria-label="LearnitPal"><path d="M60.00 60.00 L95.11 90.53 L130.21 60.00 L130.21 221.79 L267.58 221.79 L267.58 292.00 L60.00 292.00 Z" fill="#1B1712"/><circle cx="194.32" cy="157.68" r="47.32" fill="#1B1712"/><path transform="translate(355.34 292.00) scale(0.26420)" d="M61 0V-757H192V0Z M557 12Q473 12 410.0 -26.0Q347 -64 312.0 -129.0Q277 -194 277 -273Q277 -355 312.5 -418.5Q348 -482 409.5 -519.0Q471 -556 547 -556Q611 -556 659.5 -535.0Q708 -514 742.0 -477.0Q776 -440 794.0 -392.5Q812 -345 812 -290Q812 -276 810.5 -261.0Q809 -246 805 -235H385V-335H731L669 -288Q678 -334 664.5 -370.0Q651 -406 620.5 -427.0Q590 -448 547 -448Q506 -448 474.0 -427.5Q442 -407 425.5 -367.5Q409 -328 413 -272Q409 -222 426.5 -183.5Q444 -145 478.5 -124.0Q513 -103 558 -103Q603 -103 634.5 -122.0Q666 -141 684 -173L790 -121Q774 -82 740.0 -52.0Q706 -22 659.5 -5.0Q613 12 557 12Z M1060 12Q1003 12 961.0 -7.0Q919 -26 896.0 -61.5Q873 -97 873 -144Q873 -189 893.0 -224.5Q913 -260 955.0 -284.0Q997 -308 1061 -318L1239 -347V-247L1086 -221Q1047 -214 1028.0 -196.0Q1009 -178 1009 -149Q1009 -121 1030.5 -104.5Q1052 -88 1084 -88Q1125 -88 1156.5 -105.5Q1188 -123 1205.5 -154.0Q1223 -185 1223 -222V-362Q1223 -397 1195.5 -420.5Q1168 -444 1123 -444Q1081 -444 1048.5 -421.5Q1016 -399 1001 -362L894 -414Q910 -457 944.5 -488.5Q979 -520 1026.0 -538.0Q1073 -556 1128 -556Q1195 -556 1246.0 -531.5Q1297 -507 1325.5 -463.5Q1354 -420 1354 -362V0H1230V-93L1258 -95Q1237 -60 1208.0 -36.5Q1179 -13 1142.0 -0.5Q1105 12 1060 12Z M1461 0V-544H1584V-423L1574 -441Q1593 -502 1633.5 -526.0Q1674 -550 1731 -550H1763V-434H1716Q1660 -434 1626.0 -399.5Q1592 -365 1592 -303V0Z M1821 0V-544H1944V-437L1934 -456Q1953 -505 1996.5 -530.5Q2040 -556 2098 -556Q2158 -556 2204.5 -530.0Q2251 -504 2277.0 -457.5Q2303 -411 2303 -350V0H2172V-319Q2172 -355 2158.0 -381.0Q2144 -407 2119.5 -421.5Q2095 -436 2062 -436Q2030 -436 2005.0 -421.5Q1980 -407 1966.0 -381.0Q1952 -355 1952 -319V0Z M2400 0V-544H2531V0Z M2886 6Q2794 6 2743.5 -44.5Q2693 -95 2693 -187V-427H2599V-544H2609Q2649 -544 2671.0 -565.0Q2693 -586 2693 -626V-668H2824V-544H2949V-427H2824V-194Q2824 -167 2833.5 -148.0Q2843 -129 2863.5 -119.0Q2884 -109 2916 -109Q2923 -109 2932.5 -110.0Q2942 -111 2951 -112V0Q2937 2 2919.0 4.0Q2901 6 2886 6Z M3037 200V-544H3160V-436L3148 -463Q3176 -507 3224.0 -531.5Q3272 -556 3335 -556Q3412 -556 3474.0 -518.0Q3536 -480 3572.5 -416.0Q3609 -352 3609 -272Q3609 -193 3573.0 -128.0Q3537 -63 3475.0 -25.5Q3413 12 3334 12Q3275 12 3225.5 -11.5Q3176 -35 3147 -79L3168 -105V200ZM3319 -108Q3364 -108 3399.0 -129.0Q3434 -150 3453.5 -187.0Q3473 -224 3473 -272Q3473 -320 3453.5 -356.5Q3434 -393 3399.0 -414.5Q3364 -436 3319 -436Q3276 -436 3241.5 -415.0Q3207 -394 3187.5 -356.5Q3168 -319 3168 -272Q3168 -224 3187.5 -187.0Q3207 -150 3241.5 -129.0Q3276 -108 3319 -108Z M3860 12Q3803 12 3761.0 -7.0Q3719 -26 3696.0 -61.5Q3673 -97 3673 -144Q3673 -189 3693.0 -224.5Q3713 -260 3755.0 -284.0Q3797 -308 3861 -318L4039 -347V-247L3886 -221Q3847 -214 3828.0 -196.0Q3809 -178 3809 -149Q3809 -121 3830.5 -104.5Q3852 -88 3884 -88Q3925 -88 3956.5 -105.5Q3988 -123 4005.5 -154.0Q4023 -185 4023 -222V-362Q4023 -397 3995.5 -420.5Q3968 -444 3923 -444Q3881 -444 3848.5 -421.5Q3816 -399 3801 -362L3694 -414Q3710 -457 3744.5 -488.5Q3779 -520 3826.0 -538.0Q3873 -556 3928 -556Q3995 -556 4046.0 -531.5Q4097 -507 4125.5 -463.5Q4154 -420 4154 -362V0H4030V-93L4058 -95Q4037 -60 4008.0 -36.5Q3979 -13 3942.0 -0.5Q3905 12 3860 12Z M4261 0V-757H4392V0Z" fill="#1B1712"/><circle cx="1006.73" cy="113.66" r="19.97" fill="#1B1712"/></svg></div><p class="cap">Lockup, one colour, for print and fax-grade copies</p></div>
+  </div>
+</section>
+
+<section class="two">
+  <div>
+    <h2>App icon and splash</h2>
+    <p>The icon is the reversed mark on Night, full bleed, so Android's launcher masks (circle, squircle, teardrop) cut the ground and never the mark. The adaptive foreground keeps the mark inside the 66dp safe zone.</p>
+    <p>The splash stacks the mark over the wordmark, centred slightly above the middle of the screen, where the eye lands first.</p>
+    <div class="sizes" aria-label="The icon at small sizes">
+      <figure><img src="png/learnitpal-icon-48.png" width="48" height="48" alt="Icon at 48 pixels"><figcaption>48</figcaption></figure>
+      <figure><img src="png/learnitpal-icon-32.png" width="32" height="32" alt="Icon at 32 pixels"><figcaption>32</figcaption></figure>
+      <figure><img src="png/learnitpal-icon-16.png" width="16" height="16" alt="Icon at 16 pixels"><figcaption>16</figcaption></figure>
+    </div>
+  </div>
+  <div class="phones">
+    <div class="phone"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 2400" role="img" aria-label="LearnitPal"><rect width="1080" height="2400" fill="#F9F5EF"/><path d="M404.00 820.00 L450.00 860.00 L496.00 820.00 L496.00 1032.00 L676.00 1032.00 L676.00 1124.00 L404.00 1124.00 Z" fill="#1B1712"/><circle cx="580.00" cy="948.00" r="62.00" fill="#E0962C"/><path transform="translate(187.13 1334.00) scale(0.15852)" d="M61 0V-757H192V0Z M557 12Q473 12 410.0 -26.0Q347 -64 312.0 -129.0Q277 -194 277 -273Q277 -355 312.5 -418.5Q348 -482 409.5 -519.0Q471 -556 547 -556Q611 -556 659.5 -535.0Q708 -514 742.0 -477.0Q776 -440 794.0 -392.5Q812 -345 812 -290Q812 -276 810.5 -261.0Q809 -246 805 -235H385V-335H731L669 -288Q678 -334 664.5 -370.0Q651 -406 620.5 -427.0Q590 -448 547 -448Q506 -448 474.0 -427.5Q442 -407 425.5 -367.5Q409 -328 413 -272Q409 -222 426.5 -183.5Q444 -145 478.5 -124.0Q513 -103 558 -103Q603 -103 634.5 -122.0Q666 -141 684 -173L790 -121Q774 -82 740.0 -52.0Q706 -22 659.5 -5.0Q613 12 557 12Z M1060 12Q1003 12 961.0 -7.0Q919 -26 896.0 -61.5Q873 -97 873 -144Q873 -189 893.0 -224.5Q913 -260 955.0 -284.0Q997 -308 1061 -318L1239 -347V-247L1086 -221Q1047 -214 1028.0 -196.0Q1009 -178 1009 -149Q1009 -121 1030.5 -104.5Q1052 -88 1084 -88Q1125 -88 1156.5 -105.5Q1188 -123 1205.5 -154.0Q1223 -185 1223 -222V-362Q1223 -397 1195.5 -420.5Q1168 -444 1123 -444Q1081 -444 1048.5 -421.5Q1016 -399 1001 -362L894 -414Q910 -457 944.5 -488.5Q979 -520 1026.0 -538.0Q1073 -556 1128 -556Q1195 -556 1246.0 -531.5Q1297 -507 1325.5 -463.5Q1354 -420 1354 -362V0H1230V-93L1258 -95Q1237 -60 1208.0 -36.5Q1179 -13 1142.0 -0.5Q1105 12 1060 12Z M1461 0V-544H1584V-423L1574 -441Q1593 -502 1633.5 -526.0Q1674 -550 1731 -550H1763V-434H1716Q1660 -434 1626.0 -399.5Q1592 -365 1592 -303V0Z M1821 0V-544H1944V-437L1934 -456Q1953 -505 1996.5 -530.5Q2040 -556 2098 -556Q2158 -556 2204.5 -530.0Q2251 -504 2277.0 -457.5Q2303 -411 2303 -350V0H2172V-319Q2172 -355 2158.0 -381.0Q2144 -407 2119.5 -421.5Q2095 -436 2062 -436Q2030 -436 2005.0 -421.5Q1980 -407 1966.0 -381.0Q1952 -355 1952 -319V0Z M2400 0V-544H2531V0Z M2886 6Q2794 6 2743.5 -44.5Q2693 -95 2693 -187V-427H2599V-544H2609Q2649 -544 2671.0 -565.0Q2693 -586 2693 -626V-668H2824V-544H2949V-427H2824V-194Q2824 -167 2833.5 -148.0Q2843 -129 2863.5 -119.0Q2884 -109 2916 -109Q2923 -109 2932.5 -110.0Q2942 -111 2951 -112V0Q2937 2 2919.0 4.0Q2901 6 2886 6Z M3037 200V-544H3160V-436L3148 -463Q3176 -507 3224.0 -531.5Q3272 -556 3335 -556Q3412 -556 3474.0 -518.0Q3536 -480 3572.5 -416.0Q3609 -352 3609 -272Q3609 -193 3573.0 -128.0Q3537 -63 3475.0 -25.5Q3413 12 3334 12Q3275 12 3225.5 -11.5Q3176 -35 3147 -79L3168 -105V200ZM3319 -108Q3364 -108 3399.0 -129.0Q3434 -150 3453.5 -187.0Q3473 -224 3473 -272Q3473 -320 3453.5 -356.5Q3434 -393 3399.0 -414.5Q3364 -436 3319 -436Q3276 -436 3241.5 -415.0Q3207 -394 3187.5 -356.5Q3168 -319 3168 -272Q3168 -224 3187.5 -187.0Q3207 -150 3241.5 -129.0Q3276 -108 3319 -108Z M3860 12Q3803 12 3761.0 -7.0Q3719 -26 3696.0 -61.5Q3673 -97 3673 -144Q3673 -189 3693.0 -224.5Q3713 -260 3755.0 -284.0Q3797 -308 3861 -318L4039 -347V-247L3886 -221Q3847 -214 3828.0 -196.0Q3809 -178 3809 -149Q3809 -121 3830.5 -104.5Q3852 -88 3884 -88Q3925 -88 3956.5 -105.5Q3988 -123 4005.5 -154.0Q4023 -185 4023 -222V-362Q4023 -397 3995.5 -420.5Q3968 -444 3923 -444Q3881 -444 3848.5 -421.5Q3816 -399 3801 -362L3694 -414Q3710 -457 3744.5 -488.5Q3779 -520 3826.0 -538.0Q3873 -556 3928 -556Q3995 -556 4046.0 -531.5Q4097 -507 4125.5 -463.5Q4154 -420 4154 -362V0H4030V-93L4058 -95Q4037 -60 4008.0 -36.5Q3979 -13 3942.0 -0.5Q3905 12 3860 12Z M4261 0V-757H4392V0Z" fill="#1B1712"/><circle cx="577.97" cy="1227.00" r="11.98" fill="#E0962C"/></svg></div>
+    <div class="phone"><svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 2400" role="img" aria-label="LearnitPal"><rect width="1080" height="2400" fill="#14110D"/><path d="M404.00 820.00 L450.00 860.00 L496.00 820.00 L496.00 1032.00 L676.00 1032.00 L676.00 1124.00 L404.00 1124.00 Z" fill="#F3EEE6"/><circle cx="580.00" cy="948.00" r="62.00" fill="#E0962C"/><path transform="translate(187.13 1334.00) scale(0.15852)" d="M61 0V-757H192V0Z M557 12Q473 12 410.0 -26.0Q347 -64 312.0 -129.0Q277 -194 277 -273Q277 -355 312.5 -418.5Q348 -482 409.5 -519.0Q471 -556 547 -556Q611 -556 659.5 -535.0Q708 -514 742.0 -477.0Q776 -440 794.0 -392.5Q812 -345 812 -290Q812 -276 810.5 -261.0Q809 -246 805 -235H385V-335H731L669 -288Q678 -334 664.5 -370.0Q651 -406 620.5 -427.0Q590 -448 547 -448Q506 -448 474.0 -427.5Q442 -407 425.5 -367.5Q409 -328 413 -272Q409 -222 426.5 -183.5Q444 -145 478.5 -124.0Q513 -103 558 -103Q603 -103 634.5 -122.0Q666 -141 684 -173L790 -121Q774 -82 740.0 -52.0Q706 -22 659.5 -5.0Q613 12 557 12Z M1060 12Q1003 12 961.0 -7.0Q919 -26 896.0 -61.5Q873 -97 873 -144Q873 -189 893.0 -224.5Q913 -260 955.0 -284.0Q997 -308 1061 -318L1239 -347V-247L1086 -221Q1047 -214 1028.0 -196.0Q1009 -178 1009 -149Q1009 -121 1030.5 -104.5Q1052 -88 1084 -88Q1125 -88 1156.5 -105.5Q1188 -123 1205.5 -154.0Q1223 -185 1223 -222V-362Q1223 -397 1195.5 -420.5Q1168 -444 1123 -444Q1081 -444 1048.5 -421.5Q1016 -399 1001 -362L894 -414Q910 -457 944.5 -488.5Q979 -520 1026.0 -538.0Q1073 -556 1128 -556Q1195 -556 1246.0 -531.5Q1297 -507 1325.5 -463.5Q1354 -420 1354 -362V0H1230V-93L1258 -95Q1237 -60 1208.0 -36.5Q1179 -13 1142.0 -0.5Q1105 12 1060 12Z M1461 0V-544H1584V-423L1574 -441Q1593 -502 1633.5 -526.0Q1674 -550 1731 -550H1763V-434H1716Q1660 -434 1626.0 -399.5Q1592 -365 1592 -303V0Z M1821 0V-544H1944V-437L1934 -456Q1953 -505 1996.5 -530.5Q2040 -556 2098 -556Q2158 -556 2204.5 -530.0Q2251 -504 2277.0 -457.5Q2303 -411 2303 -350V0H2172V-319Q2172 -355 2158.0 -381.0Q2144 -407 2119.5 -421.5Q2095 -436 2062 -436Q2030 -436 2005.0 -421.5Q1980 -407 1966.0 -381.0Q1952 -355 1952 -319V0Z M2400 0V-544H2531V0Z M2886 6Q2794 6 2743.5 -44.5Q2693 -95 2693 -187V-427H2599V-544H2609Q2649 -544 2671.0 -565.0Q2693 -586 2693 -626V-668H2824V-544H2949V-427H2824V-194Q2824 -167 2833.5 -148.0Q2843 -129 2863.5 -119.0Q2884 -109 2916 -109Q2923 -109 2932.5 -110.0Q2942 -111 2951 -112V0Q2937 2 2919.0 4.0Q2901 6 2886 6Z M3037 200V-544H3160V-436L3148 -463Q3176 -507 3224.0 -531.5Q3272 -556 3335 -556Q3412 -556 3474.0 -518.0Q3536 -480 3572.5 -416.0Q3609 -352 3609 -272Q3609 -193 3573.0 -128.0Q3537 -63 3475.0 -25.5Q3413 12 3334 12Q3275 12 3225.5 -11.5Q3176 -35 3147 -79L3168 -105V200ZM3319 -108Q3364 -108 3399.0 -129.0Q3434 -150 3453.5 -187.0Q3473 -224 3473 -272Q3473 -320 3453.5 -356.5Q3434 -393 3399.0 -414.5Q3364 -436 3319 -436Q3276 -436 3241.5 -415.0Q3207 -394 3187.5 -356.5Q3168 -319 3168 -272Q3168 -224 3187.5 -187.0Q3207 -150 3241.5 -129.0Q3276 -108 3319 -108Z M3860 12Q3803 12 3761.0 -7.0Q3719 -26 3696.0 -61.5Q3673 -97 3673 -144Q3673 -189 3693.0 -224.5Q3713 -260 3755.0 -284.0Q3797 -308 3861 -318L4039 -347V-247L3886 -221Q3847 -214 3828.0 -196.0Q3809 -178 3809 -149Q3809 -121 3830.5 -104.5Q3852 -88 3884 -88Q3925 -88 3956.5 -105.5Q3988 -123 4005.5 -154.0Q4023 -185 4023 -222V-362Q4023 -397 3995.5 -420.5Q3968 -444 3923 -444Q3881 -444 3848.5 -421.5Q3816 -399 3801 -362L3694 -414Q3710 -457 3744.5 -488.5Q3779 -520 3826.0 -538.0Q3873 -556 3928 -556Q3995 -556 4046.0 -531.5Q4097 -507 4125.5 -463.5Q4154 -420 4154 -362V0H4030V-93L4058 -95Q4037 -60 4008.0 -36.5Q3979 -13 3942.0 -0.5Q3905 12 3860 12Z M4261 0V-757H4392V0Z" fill="#F3EEE6"/><circle cx="577.97" cy="1227.00" r="11.98" fill="#E0962C"/></svg></div>
+  </div>
+</section>
+
+<section>
+  <h2>Colour</h2>
+  <ul class="sw"><li><span class="chip" style="background:#1B1712"></span><b>Ink</b><code>#1B1712</code><small>Ribbon, wordmark, text</small></li><li><span class="chip" style="background:#E0962C"></span><b>Amber</b><code>#E0962C</code><small>The pick. Only ever the dot.</small></li><li><span class="chip" style="background:#F9F5EF"></span><b>Paper</b><code>#F9F5EF</code><small>Light ground</small></li><li><span class="chip" style="background:#14110D"></span><b>Night</b><code>#14110D</code><small>Dark ground</small></li><li><span class="chip" style="background:#F3EEE6"></span><b>Paper on dark</b><code>#F3EEE6</code><small>Ribbon on Night</small></li></ul>
+</section>
+
+<section>
+  <h2>Keep it whole</h2>
+  <ul class="rules">
+    <li>Amber is only ever the dot. Never colour the ribbon amber on a light ground.</li>
+    <li>Never round the ribbon's corners or soften the notch. The hard corners are the point.</li>
+    <li>Never move the dot out of the corner, outline it, or turn it into another shape.</li>
+    <li>Never rotate, skew, add shadows, or put the mark on a busy photo without a solid ground.</li>
+    <li>Smallest mark: 16px on screen, 5mm in print. Smallest lockup: 96px or 20mm wide.</li>
+    <li>The wordmark is always lowercase, set as drawn. Never retype it in another font.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Files</h2>
+  <p>Everything here is vector. PNG previews are in <code>png/</code>.</p>
+  <ul class="files"><li><code>svg/learnitpal-adaptive-foreground.svg</code></li><li><code>svg/learnitpal-app-icon-light.svg</code></li><li><code>svg/learnitpal-app-icon.svg</code></li><li><code>svg/learnitpal-lockup-mono-white.svg</code></li><li><code>svg/learnitpal-lockup-mono.svg</code></li><li><code>svg/learnitpal-lockup-reversed.svg</code></li><li><code>svg/learnitpal-lockup.svg</code></li><li><code>svg/learnitpal-mark-mono-white.svg</code></li><li><code>svg/learnitpal-mark-mono.svg</code></li><li><code>svg/learnitpal-mark-reversed.svg</code></li><li><code>svg/learnitpal-mark.svg</code></li><li><code>svg/learnitpal-splash-dark.svg</code></li><li><code>svg/learnitpal-splash-light.svg</code></li><li><code>svg/learnitpal-wordmark-mono-white.svg</code></li><li><code>svg/learnitpal-wordmark-mono.svg</code></li><li><code>svg/learnitpal-wordmark-reversed.svg</code></li><li><code>svg/learnitpal-wordmark.svg</code></li></ul>
+</section>
+</div>
+<script>
+(function(){
+  var KEY="learnitpal.brand.theme", order=["system","light","dark"], root=document.documentElement, btn=document.getElementById("theme-toggle");
+  function read(){try{return localStorage.getItem(KEY)||"system"}catch(e){return "system"}}
+  function apply(mode){
+    if(mode==="system"){root.removeAttribute("data-theme")}else{root.setAttribute("data-theme",mode)}
+    btn.textContent="Theme: "+mode;
+  }
+  var mode=read(); apply(mode);
+  btn.addEventListener("click",function(){
+    mode=order[(order.indexOf(mode)+1)%order.length]; apply(mode);
+    try{localStorage.setItem(KEY,mode)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
